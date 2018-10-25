@@ -1,5 +1,3 @@
-// npm install livecam
- 
 const LiveCam = require('livecam');
 const webcam_server = new LiveCam({
     // address and port of the webcam UI
@@ -13,7 +11,7 @@ const webcam_server = new LiveCam({
     'start' : function() {
         console.log('WebCam server started!');
     },
-// webcam object holds configuration of webcam frames
+    // webcam object holds configuration of webcam frames
     'webcam' : {
         
         // should frames be converted to grayscale (default : false)
