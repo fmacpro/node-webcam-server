@@ -45,7 +45,34 @@ chmod +x cam.sh
 ```
 
 ```
-./cam.sh
+sudo ./cam.sh
+```
+
+### Front End Example using the socket.io port
+
+```
+<!doctype html>
+	<html lang="en">
+		<head>
+			<meta charset="utf-8">
+			<title>livecam UI</title>
+			<script type="text/javascript" src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+			<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+			<style type="text/css">html,body,.feed,.feed img{width:100%;height:100%;overflow:hidden;}</style>
+		</head>
+		<body>
+			<div class="feed"><img id="video" src=""/></div>
+			<script>
+				var webcam_host = $(".feed img");
+				var socket = io.connect( "//127.0.0.1:12000" );
+				
+				socket.on('image', function (data) {
+					webcam_host.attr("src", "data:image/jpeg;base64," + data );
+				});
+			</script>
+		</body>
+	</html>
 ```
 
 ## License
