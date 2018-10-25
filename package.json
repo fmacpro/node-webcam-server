@@ -1,0 +1,14 @@
+{
+  "name": "node-webcam-server",
+  "version": "0.0.1",
+  "description": "a simple node.js webcam server based on the livecam npm module",
+  "main": "webcam.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Frank MacDonald",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "livecam": "^0.2.0"
+  }
+}
